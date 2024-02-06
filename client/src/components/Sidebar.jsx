@@ -66,6 +66,10 @@ const navItems = [
     icon: <PointOfSaleRounded />,
   },
   {
+    text: "Daily",
+    icon: <TodayOutlined />,
+  },
+  {
     text: "Monthly",
     icon: <CalendarMonthOutlined />,
   },
