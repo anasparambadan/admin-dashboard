@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { ResponsiveLine } from "@nivo/line";
-import { useTheme } from "@mui/material";
+import { Box, CircularProgress, useTheme } from "@mui/material";
 import { useGetSalesQuery } from "state/api";
 
 const OverviewChart = ({ isDashboard = false, view }) => {
@@ -38,7 +38,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     );
     return [[totalSalesLine], [totalUnitsLine]];
   }, [data]);
-  if (!data || isLoading) return "Loading....";
+  if (!data || isLoading) return <Box minHeight='80vh' sx={{height:'100%', display:'flex', justifyContent:'center',alignItems:'center'}}><CircularProgress color="secondary"/></Box>;
   return (
     <ResponsiveLine
       data={view === "sales" ? totalSalesLine : totalUnitsLine}
